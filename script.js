@@ -22,15 +22,13 @@ const addParentNode = () => {
     const text = prompt('Enter parent node text:');
     const parentNode = createNode(text);
 
-    // If there is a selected node, make it a child of the parent node
+   
     if (selectedNode) {
         parentNode.appendChild(selectedNode);
     }
 
-    // Add the parent node to the tree container
     treeContainer.appendChild(parentNode);
 
-    // Update the selected node to be the parent node
     selectedNode = parentNode;
 };
 
@@ -74,7 +72,6 @@ const clearSelection = () => {
     selectedNodes.forEach(node => node.classList.remove('selected'));
 };
 
-// Add event listeners to the buttons
 document.getElementById('add-single-node').addEventListener('click', addSingleNode);
 document.getElementById('add-child-node').addEventListener('click', addChildNode);
 document.getElementById('add-parent-node').addEventListener('click', addParentNode);
